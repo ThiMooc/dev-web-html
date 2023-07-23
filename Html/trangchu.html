@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DbShop</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@1,300&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="./main.css">
+    <link rel="stylesheet" href="./base.css">
+    <link rel="stylesheet" href="./fontawesome-free-6.3.0-web/css/all.css">
+    <link rel="stylesheet" href="./danhsachsanpham.html">
+    <meta charset="utf-8" />
+    <title></title>
+    <link rel="stylesheet" href="https://cdn.datatables.net/1.10.19/css/jquery.dataTables.min.css" />
+    <script src="https://code.jquery.com/jquery-3.3.1.js"></script>
+    <script src="https://cdn.datatables.net/1.10.19/js/jquery.dataTables.min.js"></script>
+    <script>
+        $(document).ready(function () {
+            var table = $('#example').DataTable();
+            $('#example tbody').on('click', 'tr', function () {
+                if ($(this).hasClass('selected')) {
+                    $(this).removeClass('selected');
+                }
+                else {
+                    table.$('tr.selected').removeClass('selected');
+                    $(this).addClass('selected');
+                }
+            });
+        });
+        
+    </script>
+    <script src="/addcart.js"></script>
+</head>
+
+<body>
+    <div class="app">
+        <header class="header">
+            <nav class="header__navbar">
+                <ul class="header__navbar-list">
+                    <li class="header__navbar-item">
+                        <span class="header__navbar-title--no-pointer">Chào Mừng Bạn Đến Với DBSHOP</span>
+                    </li>
+                </ul>
+                <ul class="header__navbar-list">
+                    <li class="header__navbar-item">
+                    <a href="/dangki.html">Đăng Ký</a>
+                    <a href="/dangnhap.html">Đăng Nhập</a>
+                </ul>
+            </nav>
+
+            <div class="header__inner">
+                <div class="header-with-search">      
+                    <div class="header__logo">
+                       <a href=""> <img src="img/logo-db.png" height="50px" alt=""> </a>
+                    </div>
+                    <div class="header__warp">
+
+                    </div>
+                    <div class="wrap">
+                        <form action="" class="search" method="post">
+                           <input type="text" class="searchTerm" placeholder="Bạn muốn tìm gì?">
+                           <button type="Tìm Kiếm" class="searchButton">
+                            <i class="fa-solid fa-magnifying-glass"></i>
+                          </button>
+                          <div class="search-history">
+                            <h4 class="search-history-heading">Lịch Sử Tìm Kiếm</h4>
+                            <ul class="search-history-list">
+                                <li class="search-history-item">
+                                    <a href="">goku</a>
+                                </li>
+                                <li class="search-history-item">
+                                    <a href="">vegeta</a>
+                                </li>
+                            </ul>
+                          </div>
+                        </form>
+                     </div>
+                </div>
+            <div class="header__cart">
+                <a href="https://www.facebook.com/ThiMooc1214" class="header__navbar-icon-link" target="_blank">
+                    <i class="header__navbar-icon fa-brands fa-facebook"></i>
+                </a>
+                <a href="https://www.instagram.com/_thimooc.03/?hl=en" class="header__navbar-icon-link" target="_blank">
+                        <i class="header__navbar-icon fa-brands fa-instagram"></i>
+                    </a>    
+                    <a href="https://mail.google.com/mail/u/3/#inbox" class="header__navbar-icon-link" target="_blank">   
+                        <i class="header__navbar-icon fa-solid fa-envelope"></i>
+                    </a>
+                    <button style="background-color: #057f52;" onclick="slCart()" class="header__navbar-icon-link">   
+                        <i class="header__cart-icon fa-solid fa-bag-shopping"></i>
+                    </button>
+            </div>
+        </div>
+        </header>
+    </div>
+    <div id="slideshow">
+        <div class="slide-wrapper">
+            <div class="slide"><img src="/img/vegeta-blue-5k-anime-1g-1336x768.jpg"></div>
+            <div class="slide"><img src="/img/wallpapersden.com_cool-black-goku-hd-dragon-ball-super_1336x768.jpg"></div>
+            <div class="slide"><img src="/img/goku-dragon-ball-super-87-1366x768 5.jpg"></div>
+        </div>
+      </div>
+
+    <div class="space"> 
+    </div>
+
+    <style>
+        *{
+        padding: 0;
+        margin: 0;
+        }
+    </style>
+    <div class="products-selling">
+      
+         <div class="title">
+            <a href="/danhsachsanpham.html">Sản Phẩm Bán Chạy</a>
+        </div>
+        <ul class="products">
+            <li>
+                <div class="products-item">
+                    <div class="product-top">
+                        <a href=""class="product-thumb">
+                            <img src="/img/GKBOX-Studio-–-Great-Ape-Vegeta-1-247x296.jpg" alt="">
+                        </a>
+
+                    </div>
+                <div class="product-info">
+                    <input style="width: 250px;" id="Vegeta" value="Vegeta" class="product-name" disabled="true"></input>
+                    <div class="product-price">$1250</div>
+                    <button style="margin-left: 55px;" class="center"onclick="addcart(Vegeta)">Thêm Vào Giỏ Hàng</button>
+                    </div>
+            </li>
+            <li>
+                <div class="products-item">
+                    <div class="product-top">
+                        <a href=""class="product-thumb">
+                            <img src="/img/MRC-XCEED-–-Master-Roshi-1-247x296.jpg" alt="">
+                        </a>
+                        </div>
+                <div class="product-info">
+                    <div class="product-info">
+                        <input style="width: 250px;" id="MasterRoshi" value="Master Roshi" class="product-name" disabled="true"></input>
+                        <div class="product-price">$1050</div>
+                        <button style="margin-left: 55px;" class="center"onclick="addcart(MasterRoshi)">Thêm Vào Giỏ Hàng</button>
+                        </div>
+                </div>
+            </li>
+            <li>
+                <div class="products-item">
+                    <div class="product-top">
+                    <a href=""class="product-thumb">
+                        <img src="/img/90179102_2342674719358153_4287185631303434240_n-247x296.jpg" alt="">
+                    </a>
+                </div>
+                <div class="product-info">
+                    <div class="product-info">
+                        <input style="width: 250px;" id="GokuVSFrize" value="Goku VS Frize" class="product-name" disabled="true"></input>
+                        <div class="product-price">$1000</div>
+                        <button style="margin-left: 55px;" class="center"onclick="addcart(GokuVSFrize)">Thêm Vào Giỏ Hàng</button>
+                        </div>
+                </div>
+            </li>
+            <li>
+                <div class="products-item">
+                    <div class="product-top">
+                    <a href=""class="product-thumb">
+                        <img src="/img/MRC-XCEED-–-Super-Saiyan-Blue-vs-Goku-Black-1-247x296.jpg" alt="">
+                    </a>
+                </div>
+                <div class="product-info">
+                    <div class="product-info">
+                        <input style="width: 250px;" id="BlueVSBlack" value="Blue VS Black" class="product-name" disabled="true"></input>
+                        <div class="product-price">$1250</div>
+                        <button style="margin-left: 55px;" class="center"onclick="addcart(BlueVSBlack)">Thêm Vào Giỏ Hàng</button>
+                        </div>
+                </div>
+            </li>
+        </ul> 
+     </div> 
+    <div class="gift">
+        <div class="gift__background">
+            <p1>Đăng Ký Nhận Ưu Đãi</p1>
+            <p2>(Vui Lòng Nhập Email Để Nhận Khuyến Mãi)</p2>
+            <p3>Địa Chỉ Email(Bắt Buộc)</p3>
+            <input type="text"></input>
+            <button>Gửi</button>
+        </>
+    </div>
+    <div class="header__inside">
+        <div class="header__background">
+         <div class="logo__inside">
+                <img src="/img/logo-db.png" alt=""> 
+                <p>Chào Mừng Bạn Đến Với DBSHOP</p>
+            </div>
+        <div class="icon__inside">
+            <div class="banking">
+            <i class="fa-brands fa-cc-visa"></i>
+            <i class="fa-brands fa-paypal"></i>
+            <i class="fa-brands fa-cc-stripe"></i>
+            <i class="fa-brands fa-cc-mastercard"></i>
+            </div>
+            <div class="contact">
+          <i class="fa-solid fa-phone"></i>
+            <p>:0964249783</p>
+            </div>          
+        </div>
+
+    </div>
+        </div>
+    </div>
+</body>
+</html>

@@ -1,0 +1,40 @@
+.header_cart {
+    height: 120px;
+
+}
+
+.header_cart-background{
+    height: 40px;
+    width: 100%;
+}
+.header_cart img {
+    height: 100px;
+    width: 100%;
+}
+
+.header_cart a {
+    text-decoration: none;
+    display: block-inline;
+    color: rgb(142, 11, 11);
+    
+
+}
+
+.menu_cart {
+    margin-top: 80px;
+}
+.menu_cart p {
+    font-size: 30px;
+    margin-left: 450px;
+    color: rgb(202, 136, 37);
+    border: 1px solid #000;
+    border-radius: 2px;
+    width: 260px;
+}
+.button {
+    display: flex;
+    margin-top: 40px;
+    margin-left: 1000px;
+    font-size: 10px;
+    color: blue;
+}

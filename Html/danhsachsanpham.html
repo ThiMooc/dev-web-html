@@ -1,0 +1,360 @@
+ <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DbShop</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@1,300&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="./main.css">
+    <link rel="stylesheet" href="./base.css">
+    <link rel="stylesheet" href="./fontawesome-free-6.3.0-web/css/all.css">
+    <link rel="stylesheet" href="./danhsachsanpham.html">
+    <link rel="stylesheet" href="/menu.css">
+    <meta charset="utf-8" />
+    <title></title>
+    <link rel="stylesheet" href="https://cdn.datatables.net/1.10.19/css/jquery.dataTables.min.css" />
+    <script src="https://code.jquery.com/jquery-3.3.1.js"></script>
+    <script src="https://cdn.datatables.net/1.10.19/js/jquery.dataTables.min.js"></script>
+    <script>
+        $(document).ready(function () {
+            var table = $('#example').DataTable();
+            $('#example tbody').on('click', 'tr', function () {
+                if ($(this).hasClass('selected')) {
+                    $(this).removeClass('selected');
+                }
+                else {
+                    table.$('tr.selected').removeClass('selected');
+                    $(this).addClass('selected');
+                }
+            });
+        });
+    </script>
+    <script src="/addcart.js"></script>
+       <style type="text/css">
+        td {border: 1px #DDD solid; width: 2000px; height: 00p; cursor: pointer;}
+        .selected {
+                   background-color: brown;
+                   color: #FFF;
+                   }
+           </style>
+</head>
+<body>
+
+    <div class="app">
+        <header class="header">
+            <nav class="header__navbar">
+                <ul class="header__navbar-list">
+                    <li class="header__navbar-item">
+                        <span class="header__navbar-title--no-pointer">Chào Mừng Bạn Đến Với DBSHOP</span>
+                    </li>
+                </ul>
+                <ul class="header__navbar-list">
+                    <li class="header__navbar-item">
+                    <a href="/dangki.html">Đăng Ký</a>
+                    <a href="/dangnhap.html">Đăng Nhập</a>
+                </ul>
+            </nav>
+
+            <div class="header__inner">
+                <div class="header-with-search">      
+                    <div class="header__logo">
+                       <a href="/trangchu.html"> <img src="img/logo-db.png" height="50px" alt=""> </a>
+                    </div>
+                    <div class="header__warp">
+
+                    </div>
+                    <div class="wrap">
+                        <form action="" class="search" method="post">
+                           <input type="text" class="searchTerm" placeholder="Bạn muốn tìm gì?">
+                           <button type="Tìm Kiếm" class="searchButton">
+                            <i class="fa-solid fa-magnifying-glass"></i>
+                          </button>
+                          <div class="search-history">
+                            <h4 class="search-history-heading">Lịch Sử Tìm Kiếm</h4>
+                            <ul class="search-history-list">
+                                <li class="search-history-item">
+                                    <a href="">goku</a>
+                                </li>
+                                <li class="search-history-item">
+                                    <a href="">vegeta</a>
+                                </li>
+                            </ul>
+                          </div>
+                        </form>
+                     </div>
+                </div>
+            <div class="header__cart">
+                <a href="https://www.facebook.com/ThiMooc1214" class="header__navbar-icon-link" target="_blank">
+                    <i class="header__navbar-icon fa-brands fa-facebook"></i>
+                </a>
+                <a href="https://www.instagram.com/_thimooc.03/?hl=en" class="header__navbar-icon-link" target="_blank">
+                        <i class="header__navbar-icon fa-brands fa-instagram"></i>
+                    </a>    
+                    <a href="https://mail.google.com/mail/u/3/#inbox" class="header__navbar-icon-link" target="_blank">   
+                        <i class="header__navbar-icon fa-solid fa-envelope"></i>
+                    </a>
+                    <button style="background-color: #057f52;" onclick="slCart()" class="header__navbar-icon-link">   
+                        <i class="header__cart-icon fa-solid fa-bag-shopping"></i>
+                    </button>
+            </div>
+        </div>
+        </header>
+    </div>
+    <div id="slideshow">
+        <div class="slide-wrapper">
+            <div class="slide"><img src="/img/vegeta-blue-5k-anime-1g-1336x768.jpg"></div>
+            <div class="slide"><img src="/img/wallpapersden.com_cool-black-goku-hd-dragon-ball-super_1336x768.jpg"></div>
+            <div class="slide"><img src="/img/goku-dragon-ball-super-87-1366x768 5.jpg"></div>
+        </div>
+      </div>
+
+    <div class="space"> 
+    </div>
+
+    <style>
+        *{
+        padding: 0;
+        margin: 0;
+        }
+    </style>
+    <div class="products-selling">
+
+        <div class="title">
+             <a href="/danhsachsanpham.html">Danh Sách Sản Phẩm</a>
+        </div>
+            <!-- <table id="table">
+                <tr>
+                    <td>Tên Sản Phẩm</td>
+                    <td>Ảnh</td>
+                    <td>Giá</td>
+                </tr>
+                <tr>
+                    <td>Vegeta</td>
+                    <td><img src="/img/GKBOX-Studio-–-Great-Ape-Vegeta-1-247x296.jpg" alt=""></td>
+                    <td>$1.250,00</td>
+                </tr>
+                <tr>
+                    <td>Master Roshi</td>
+                    <td><img src="/img/MRC-XCEED-–-Master-Roshi-1-247x296.jpg" alt="">
+                    <td>$1.000,00</td>
+                </tr>
+                <tr>
+                    <td>Goku VS Frieza</td>
+                    <td><img src="/img/90179102_2342674719358153_4287185631303434240_n-247x296.jpg" alt=""></td>
+                    <td>$1.500,00</td>
+                </tr>
+                <tr>
+                    <td>Goku SSB VS Black Goku</td>
+                    <td><img src="/img/MRC-XCEED-–-Super-Saiyan-Blue-vs-Goku-Black-1-247x296.jpg" alt=""></td>
+                    <td>$1.250,00</td>
+                </tr>
+                <tr>
+                    <td>Jiren X Toppo</td>
+                    <td><img src="/img/Noah-Studio-–-Jiren-x-Toppo-1-1-247x296.jpg" alt=""></td>
+                    <td>$1.100,00</td>
+                </tr>
+                <tr>
+                    <td>Goku SS2</td>
+                    <td><img src="/img/Legendary-Collectibles-–-Goku-1-247x296.jpeg" alt=""></td>
+                    <td>$1.599,99</td>
+                </tr>
+            </table> -->
+            <ul class="products">
+                <li>
+                    <div class="products-item">
+                        <div class="product-top">
+                            <a href=""class="product-thumb">
+                                <img src="/img/GKBOX-Studio-–-Great-Ape-Vegeta-1-247x296.jpg" alt="">
+                            </a>
+    
+                        </div>
+                    <div class="product-info">
+                        <input style="width: 250px;" id="Vegeta" value="Vegeta" class="product-name" disabled="true"></input>
+                        <div class="product-price">$1250</div>
+                        <button style="margin-left: 55px;" class="center"onclick="addcart(Vegeta)">Thêm Vào Giỏ Hàng</button>
+                        </div>
+                </li>
+                <li>
+                    <div class="products-item">
+                        <div class="product-top">
+                            <a href=""class="product-thumb">
+                                <img src="/img/MRC-XCEED-–-Master-Roshi-1-247x296.jpg" alt="">
+                            </a>
+                            </div>
+                    <div class="product-info">
+                        <div class="product-info">
+                            <input style="width: 250px;" id="MasterRoshi" value="Master Roshi" class="product-name" disabled="true"></input>
+                            <div class="product-price">$1050</div>
+                            <button style="margin-left: 55px;" class="center"onclick="addcart(MasterRoshi)">Thêm Vào Giỏ Hàng</button>
+                            </div>
+                    </div>
+                </li>
+                <li>
+                    <div class="products-item">
+                        <div class="product-top">
+                        <a href=""class="product-thumb">
+                            <img src="/img/90179102_2342674719358153_4287185631303434240_n-247x296.jpg" alt="">
+                        </a>
+                    </div>
+                    <div class="product-info">
+                        <div class="product-info">
+                            <input style="width: 250px;" id="GokuVSFrize" value="Goku VS Frize" class="product-name" disabled="true"></input>
+                            <div class="product-price">$1000</div>
+                            <button style="margin-left: 55px;" class="center"onclick="addcart(GokuVSFrize)">Thêm Vào Giỏ Hàng</button>
+                            </div>
+                    </div>
+                </li>
+                <li>
+                    <div class="products-item">
+                        <div class="product-top">
+                        <a href=""class="product-thumb">
+                            <img src="/img/MRC-XCEED-–-Super-Saiyan-Blue-vs-Goku-Black-1-247x296.jpg" alt="">
+                        </a>
+                    </div>
+                    <div class="product-info">
+                        <div class="product-info">
+                            <input style="width: 250px;" id="BlueVSBlack" value="BlueVSBlack" class="product-name" disabled="true"></input>
+                            <div class="product-price">$1250</div>
+                            <button style="margin-left: 55px;" class="center"onclick="addcart(BlueVSBlack)">Thêm Vào Giỏ Hàng</button>
+                            </div>
+                    </div>
+                </li>
+                <li>
+                    <div class="products-item">
+                        <div class="product-top">
+                        <a href=""class="product-thumb">
+                            <img src="/img/Noah-Studio-–-Jiren-x-Toppo-1-1-247x296.jpg" alt="">
+                        </a>
+                    </div>
+                    <div class="product-info">
+                        <div class="product-info">
+                            <input style="width: 250px;" id="JirenxToppo" value="Jiren x Toppo" class="product-name" disabled="true"></input>
+                            <div class="product-price">$1550</div>
+                            <button style="margin-left: 55px;" class="center"onclick="addcart(JirenxToppo)">Thêm Vào Giỏ Hàng</button>
+                            </div>
+                    </div>
+                </li>
+                <li>
+                    <div class="products-item">
+                        <div class="product-top">
+                        <a href=""class="product-thumb">
+                            <img src="/img/Legendary-Collectibles-–-Goku-1-247x296.jpeg" alt="">
+                        </a>
+                    </div>
+                    <div class="product-info">
+                        <div class="product-info">
+                            <input style="width: 250px;" id="GokuSS2" value="Goku SS2" class="product-name" disabled="true"></input>
+                            <div class="product-price">$1550</div>
+                            <button style="margin-left: 55px;" class="center"onclick="addcart (GokuSS2)">Thêm Vào Giỏ Hàng</button>
+                            </div>
+                    </div>
+                </li>
+                <li>
+                    <div class="products-item">
+                        <div class="product-top">
+                        <a href=""class="product-thumb">
+                            <img src="/img/OI-Studio-–-Broly-1-247x296.jpg" alt="">
+                        </a>
+                    </div>
+                    <div class="product-info">
+                        <div class="product-info">
+                            <input style="width: 250px;" id="Broly" value="Broly" class="product-name" disabled="true"></input>
+                            <div class="product-price">$1250</div>
+                            <button style="margin-left: 55px;" class="center"onclick="addcart(Broly)">Thêm Vào Giỏ Hàng</button>
+                            </div>
+                    </div>
+                </li>
+                <li>
+                    <div class="products-item">
+                        <div class="product-top">
+                        <a href=""class="product-thumb">
+                            <img src="/img/90892307_2342674739358151_5941608017270145024_n-247x296.jpg" alt="">
+                        </a>
+                    </div>
+                    <div class="product-info">
+                        <div class="product-info">
+                            <input style="width: 250px;" id="VegetaVSCell" value="Vegeta VS Cell" class="product-name" disabled="true"></input>
+                            <div class="product-price">$1550</div>
+                            <button style="margin-left: 55px;" class="center"onclick="addcart(VegetaVSCell)">Thêm Vào Giỏ Hàng</button>
+                            </div>
+                    </div>
+                </li>
+            </ul>
+        </div>
+
+
+        <div class="header__inside">
+            <div class="header__background">
+                <div class="logo__inside">
+                    <img src="/img/logo-db.png" alt=""> 
+                    <p>Chào Mừng Bạn Đến Với DBSHOP</p>
+                </div>
+                <div class="icon__inside">
+                    <div class="banking">
+                        <i class="fa-brands fa-cc-visa"></i>
+                        <i class="fa-brands fa-paypal"></i>
+                        <i class="fa-brands fa-cc-stripe"></i>
+                        <i class="fa-brands fa-cc-mastercard"></i>
+                    </div>
+                    <div class="contact">
+                        <i class="fa-solid fa-phone"></i>
+                        <p>:0964249783</p>
+                    </div>          
+                </div>
+                
+            </div>
+            
+</body>
+</html> 
+            <!-- <html>
+  <header>
+         <style type="text/css">
+       td {border: 1px #DDD solid; padding: 5px; cursor: pointer;}
+       .selected {
+                  background-color: brown;
+                  color: #FFF;
+                  }
+          </style>
+ </header>
+        <body>
+        <table id="table">
+            <tr>
+                <td>1 Ferrari F138</td>
+                <td>1 000€</td>
+                <td>1 200€</td>
+            </tr>
+            <tr>
+                <td>2 Ferrari F138</td>
+                <td>1 000€</td>
+                <td>1 200€</td>
+            </tr>
+            <tr>
+                <td>3 Ferrari F138</td>
+                <td>1 000€</td>
+                <td>1 200€</td>
+            </tr>
+        </table>
+      <input type="button" id="tst" value="OK" onclick="fnselect()" />
+    
+    <script>
+        var table = document.getElementById('table');
+        var selected = table.getElementsByClassName('selected');
+        table.onclick = highlight;
+    
+    function highlight(e) {
+        if (selected[0]) selected[0].className = '';
+        e.target.parentNode.className = 'selected';
+    }
+    
+    function fnselect(){
+        var element = document.querySelectorAll('.selected');
+        if(element[0]!== undefined){ //it must be selected
+         alert(element[0].children[0].firstChild.data);
+        }
+    }
+  </script>
+ </body>
+</html> -->

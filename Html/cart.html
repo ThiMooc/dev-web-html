@@ -1,0 +1,271 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DbShop</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@1,300&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="./main.css">
+    <link rel="stylesheet" href="./base.css">
+    <link rel="stylesheet" href="./fontawesome-free-6.3.0-web/css/all.css">
+    <link rel="stylesheet" href="./danhsachsanpham.html">
+    <link rel="stylesheet" href="/cart.css">
+    <SCRIPT>
+    var cart1 = 0;
+    var cart2 = 0;
+    var cart3 = 0;
+    var cart4 = 0;
+    var cart5 = 0;
+    var cart6 = 0;
+    var cart7 = 0;
+    var cart8 = 0;
+    var money1 = 0;
+    var money2 = 0;
+    var money3 = 0;
+    var money4 = 0;
+    var money5 = 0;
+    var money6 = 0;
+    var money7 = 0;
+    var money8 = 0;
+    var productCart = window.localStorage.getItem('product')
+    var listItemCart = JSON.parse(productCart)
+    for(var i=0; i<listItemCart.length;i++){
+    if(listItemCart[i].name =="Vegeta"){
+     cart1 += 1;
+    }
+    if(listItemCart[i].name =="Master Roshi"){
+        cart2 += 1;
+       }
+       if(listItemCart[i].name =="Goku VS Frize"){
+        cart3 += 1;
+       }
+       if(listItemCart[i].name =="Blue VS Black"){
+        cart4 += 1;
+       }
+       if(listItemCart[i].name =="Jiren x Toppo"){
+        cart5 += 1;
+       }
+       if(listItemCart[i].name =="Goku SS2"){
+        cart6 += 1;
+       }
+       if(listItemCart[i].name =="Broly"){
+        cart7 += 1;
+       }
+       if(listItemCart[i].name =="Vegeta VS Cell"){
+        cart8 += 1;
+       }
+    }
+    var totalSL =cart1+cart2+cart3+cart4+cart5+cart6+cart7+cart8;
+    money1=cart1*1250;money2=cart2*1050;money3=cart3*1000;money4=cart4*1250;money5=cart5*1550;money6=cart6*1550;money7=cart7*1250;money8=cart8*1550;
+    var totalMoney =money1+money2+money3+money4+money5+money6+money7+money8;
+    function loadValue() {
+    document.getElementById("Text1").value = cart1;
+    document.getElementById("Text2").value = cart2;
+    document.getElementById("Text3").value = cart3;
+    document.getElementById("Text4").value = cart4;
+    document.getElementById("Text5").value = cart5;
+    document.getElementById("Text6").value = cart6;
+    document.getElementById("Text7").value = cart7;
+    document.getElementById("Text8").value = cart8;
+    document.getElementById("Textsl1").value = money1;
+    document.getElementById("Textsl2").value = money2;
+    document.getElementById("Textsl3").value = money3;
+    document.getElementById("Textsl4").value = money4;
+    document.getElementById("Textsl5").value = money5;
+    document.getElementById("Textsl6").value = money6;
+    document.getElementById("Textsl7").value = money7;
+    document.getElementById("Textsl8").value = money8;
+    document.getElementById("Texttotalsl").value = totalSL;
+    document.getElementById("Texttotalmn").value = totalMoney;
+    
+}
+        </script>
+</head>
+<script src="js/dangnhap.js"></script>
+<script src="/addcart.js"></script>
+<style type="text/css">
+    td {border: 1px #DDD solid; width: 2000px; height: 100p; margin-top: 50px; cursor: pointer;}
+    .selected {
+               background-color: brown;
+               color: #FFF;
+               }
+       </style>
+<body>
+    <div class="app">
+        <header class="header">
+            <nav class="header__navbar">
+                <ul class="header__navbar-list">
+                    <li class="header__navbar-item">
+                        <span class="header__navbar-title--no-pointer">Chào Mừng Bạn Đến Với DBSHOP {{abc}}</span>
+                    </li>
+                </ul>
+                <ul class="header__navbar-list">
+                    <li class="header__navbar-item">
+                    <li class="header__navbar-item header__navbar-item--strong">Đăng Ký</li>
+                    <li class="header__navbar-item header__navbar-item--strong">Đăng Nhập</li>
+                </ul>
+            </nav>
+
+            <div class="header__inner">
+                <div class="header-with-search">      
+                    <div class="header__logo">
+                       <a href="/trangchu.html"> <img src="img/logo-db.png" height="50px" alt=""></a>
+                    </div>
+                    <div class="header__warp">
+
+                    </div>
+                    <div class="wrap">
+                        <form action="" class="search" method="post">
+                           <input type="text" class="searchTerm" placeholder="Bạn muốn tìm gì?">
+                           <button type="Tìm Kiếm" class="searchButton">
+                            <i class="fa-solid fa-magnifying-glass"></i>
+                          </button>
+                          <div class="search-history">
+                            <h4 class="search-history-heading">Lịch Sử Tìm Kiếm</h4>
+                            <ul class="search-history-list">
+                                <li class="search-history-item">
+                                    <a href="">goku</a>
+                                </li>
+                                <li class="search-history-item">
+                                    <a href="">vegeta</a>
+                                </li>
+                            </ul>
+                          </div>
+                        </form>
+                     </div>
+                </div>
+            <div class="header__cart">
+                <a href="https://www.facebook.com/ThiMooc1214" class="header__navbar-icon-link" target="_blank">
+                    <i class="header__navbar-icon fa-brands fa-facebook"></i>
+                </a>
+                <a href="https://www.instagram.com/_thimooc.03/?hl=en" class="header__navbar-icon-link" target="_blank">
+                        <i class="header__navbar-icon fa-brands fa-instagram"></i>
+                    </a>    
+                    <a href="https://mail.google.com/mail/u/3/#inbox" class="header__navbar-icon-link" target="_blank">   
+                        <i class="header__navbar-icon fa-solid fa-envelope"></i>
+                    </a>
+                    <button onclick="slCart()" class="header__navbar-icon-link">   
+                        <i class="header__cart-icon fa-solid fa-bag-shopping"></i>
+                    </button>
+            </div>
+        </div>
+        </header>
+        <div class="header_cart">
+            <div class="header_cart-background">
+            <img src="/img/wallpapersden.com_77188-1920x108000000000.jpg" alt="">   
+
+        </div>
+        </div>
+        <div class="menu_cart">
+            <p>Thông Tin Giỏ Hàng</p>
+        <table id="table">
+            <tr>
+                <td>Tên Sản Phẩm</td>
+                <td>Ảnh</td>
+                <td>Giá</td>
+                <td>Số Lượng
+                </td>
+                <td>Thành Tiền</td>
+            </tr>
+            <tr>
+                <td>Vegeta</td>
+                <td><img src="/img/GKBOX-Studio-–-Great-Ape-Vegeta-1-247x296.jpg" alt=""></td>
+                <td>1250</td>
+                <td><input id="Text1"></input></td>
+                <td><input id ="Textsl1"disabled="true"></input></td>
+            </tr>
+            <tr>
+                <td>Master Roshi</td>
+                <td><img src="/img/MRC-XCEED-–-Master-Roshi-1-247x296.jpg" alt="">
+                <td>1050</td>
+                <td><input id ="Text2"></input></td>
+                <td><input id ="Textsl2"disabled="true"></input></td>
+            </tr>
+            <tr>
+                <td>Goku VS Frieza</td>
+                <td><img src="/img/90179102_2342674719358153_4287185631303434240_n-247x296.jpg" alt=""></td>
+                <td>1000</td>
+                <td><input id ="Text3"></input></td>
+                <td><input id ="Textsl3"disabled="true"></input></td>
+            </tr>
+            <tr>
+                <td>Blue VS Black</td>
+                <td><img src="/img/MRC-XCEED-–-Super-Saiyan-Blue-vs-Goku-Black-1-247x296.jpg" alt=""></td>
+                <td>1250</td>
+                <td><input id ="Text4"></input></td>
+                <td><input id ="Textsl4"disabled="true"></input></td>
+            </tr>
+            <tr>
+                <td>Jiren x Toppo</td>
+                <td><img src="/img/Noah-Studio-–-Jiren-x-Toppo-1-1-247x296.jpg" alt=""></td>
+                <td>1550</td>
+                <td><input id ="Text5"></input></td>
+                <td><input id ="Textsl5"disabled="true"></input></td>
+            </tr>
+            <tr>
+                <td>Goku SS2</td>
+                <td><img src="/img/Legendary-Collectibles-–-Goku-1-247x296.jpeg" alt=""></td>
+                <td>1550</td>
+                <td><input id ="Text6"></input></td>
+                <td><input id ="Textsl6"disabled="true"></input></td>
+            </tr>
+            <tr>
+                <td>Broly</td>
+                <td><img src="/img/OI-Studio-–-Broly-1-247x296.jpg" alt=""></td>
+                <td>1250</td>
+                <td><input id ="Text7"></input></td>
+                <td><input id ="Textsl7"disabled="true"></input></td>
+            </tr>
+            <tr>
+                <td>Vegeta VS Cell</td>
+                <td><img src="/img/90892307_2342674739358151_5941608017270145024_n-247x296.jpg" alt=""></td>
+                <td>1550</td>
+                <td><input id ="Text8"></input></td>
+                <td><input id ="Textsl8"disabled="true"></input></td>
+            </tr>
+
+            <tr>
+                <td>Tổng Tiền</td>
+                <td></td>
+                <td></td>
+                <td><input id ="Texttotalsl" disabled="true"></input></td>
+                <td><input id ="Texttotalmn" disabled="true"></input></td>
+            </tr>
+        </table>
+        <div class="button">
+        <input type="button" id="tst" value="Thêm" onclick="add()">
+        <input type="button" id="tst" value="Xóa" onclick="del()">
+        <script>loadValue();</script>
+    </div>
+    </div>
+    <div class="header__inside">
+        <div class="header__background">
+         <div class="logo__inside">
+                <img src="/img/logo-db.png" alt=""> 
+                <p>Chào Mừng Bạn Đến Với DBSHOP</p>
+            </div>
+        <div class="icon__inside">
+            <div class="banking">
+            <i class="fa-brands fa-cc-visa"></i>
+            <i class="fa-brands fa-paypal"></i>
+            <i class="fa-brands fa-cc-stripe"></i>
+            <i class="fa-brands fa-cc-mastercard"></i>
+            </div>
+            <div class="contact">
+          <i class="fa-solid fa-phone"></i>
+            <p>:0964249783</p>
+            </div>          
+        </div>
+
+    </div>
+    </div>
+
+    <style>
+        *{
+        padding: 0;
+        margin: 0;
+        }
+    </style>
